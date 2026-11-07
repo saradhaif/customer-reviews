@@ -1,6 +1,6 @@
 # Crochet Reviews Classification Using Hugging Face
 
-#the deployed app:[https://customercrochetreviews.streamlit.app/]
+the deployed app: [https://customercrochetreviews.streamlit.app/]
 
 ## 1. Project Overview
 
