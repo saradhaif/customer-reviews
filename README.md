@@ -1,5 +1,7 @@
 # Crochet Reviews Classification Using Hugging Face
 
+#the deployed app:[https://customercrochetreviews.streamlit.app/]
+
 ## 1. Project Overview
 
 This project uses pretrained Hugging Face models to classify customer reviews about crochet products.
