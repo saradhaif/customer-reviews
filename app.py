@@ -4,8 +4,13 @@ from transformers import pipeline
 
 st.title("Crochet Review Classifier")
 
-sentiment_model = pipeline("sentiment-analysis", model="cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual")
-zero_shot_model = pipeline("zero-shot-classification", model="joeddav/xlm-roberta-large-xnli")
+@st.cache_resource
+def load_models():
+    sentiment_model = pipeline("sentiment-analysis", model="cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual")
+    zero_shot_model = pipeline("zero-shot-classification", model="joeddav/xlm-roberta-large-xnli")
+    return sentiment_model, zero_shot_model
+
+sentiment_model, zero_shot_model = load_models()
 
 categories = [
     "overall satisfaction",
@@ -30,5 +35,3 @@ if st.button("Analyze"):
 
         st.write("Category:", category["labels"][0])
         st.write("Category Score:", category["scores"][0])
-
-        st.write("Metadata: huggingface_AI_model")
